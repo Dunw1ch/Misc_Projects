@@ -1,5 +1,6 @@
 import requests
 import json
+import os
 
 
 #look at adding pretty print for the JSON file parser
@@ -18,7 +19,7 @@ if x == "y":
     headers = {
     "accept": "application/json",
     #add API key below
-    "x-apikey": "key"
+    "x-apikey": "dd6921978ef32e2e9fe2494330f3b2061ffd65c6527740911d10bb06b90d1a6b"
     }
 
     response = requests.get(url, headers=headers)
@@ -28,8 +29,11 @@ if x == "y":
     obj = json.loads(info)
     json_formatted_str = json.dumps(obj, indent=0)
 
-    f = open('VirusTotalreport.txt', 'w')
-    f.write(json_formatted_str)
-    f.close()
+desktop_path = os.path.join(os.path.expanduser('~'), 'Desktop')
+file_path = os.path.join(desktop_path, 'VirusTotalreport.txt')
+
+with open(file_path, 'w') as f:
+        f.write(json_formatted_str)
+print("File saved to desktop:", file_path)
 
 input('Press ENTER to exit')
