@@ -19,7 +19,7 @@ if x == "y":
     headers = {
     "accept": "application/json",
     #add API key below
-    "x-apikey": "dd6921978ef32e2e9fe2494330f3b2061ffd65c6527740911d10bb06b90d1a6b"
+    "x-apikey": "#add API key"
     }
 
     response = requests.get(url, headers=headers)
