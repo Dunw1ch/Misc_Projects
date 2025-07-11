@@ -1,3 +1,6 @@
+"""
+A bit of fun messing with the Shodan API, outputs a random ransom letter detected by Shodan.
+"""
 from shodan import Shodan
 from shodan.cli.helpers import get_api_key
 
